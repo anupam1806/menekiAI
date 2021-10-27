@@ -2386,3 +2386,66 @@ section {
 a, .close{
     color: #0081A8;
 }
+
+
+
+/* --------------------------------------------------------
+Teacher Dashboard
+------------------------------------------------------------*/
+.dashboard{
+  background-color: rgb(192, 192, 192);
+}
+/* ------------------------ Header------------------------  */
+.dashbord__header{
+  background-color: #023059;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 145px 10px 50px;
+  position: fixed;
+  z-index: 10;
+  box-shadow: 0 4px 3px -1px rgba(0, 0, 0, 0.4);
+}
+.dashbord__header div span{
+  color: white;
+  font-size: 1.4rem;
+}
+.dashbord__navbar ul{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+}
+.dashbord__header__links{
+  color: white;
+  font-size: 1.3rem;
+  margin: 0 15px;
+}
+
+/*------------------------ SideBar ------------------------ */
+
+.dashboard__sidebar{
+  background-color: #023059;
+  width: 220px;
+  height: 100vh;
+}
+.dashboard__sidebar ul{
+  /* margin-top: 100px; */
+  list-style: none;
+  color: white;
+  margin: 80px 0 0 0;
+  padding: 0;
+}
+.dashboard__sidebar ul li{
+  padding: 15px;
+  width: 100%;
+  margin: 20px 0 0 0;
+  /* background-color: #08da4e; */
+}
+.dashboard__sidebar ul li:hover{
+  background-color: rgba(3, 3, 3, 0.5);
+}
+.dashboard__sidebar ul li span{
+  margin-left: 10px;
+}
