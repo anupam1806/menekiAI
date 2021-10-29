@@ -60,6 +60,8 @@ app.get("/dashboard",isAuthenticated,async function(req, res){
 
 app.use('/account',isAuthenticated,require('./routes/account-route')) ;
 app.use('/createtest',isAuthenticated,require('./routes/createTest-route')) ;
+app.use('/recent',isAuthenticated,require('./routes/recentTest-route')) ;
+app.use('/whatsnew',isAuthenticated,require('./routes/whatsnew-route')) ;
 
 app.post("/register",require('./routes/auth-route').registerController);
 
