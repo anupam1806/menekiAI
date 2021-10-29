@@ -5,7 +5,7 @@ router.get('/', async (req,res)=>{
     const profileDetail = await User.findOne({_id:req.user ? req.user._id : req.session.user._id});
     // const fetchedData = await  accountData.findOne({userId : req.session._id}) ;
 
-    res.render("Accounts", {profileDetail}) ;
+    res.render("test", {profileDetail}) ;
 });
 
 module.exports = router ;
