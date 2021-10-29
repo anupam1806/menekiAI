@@ -58,6 +58,9 @@ app.get("/dashboard",isAuthenticated,async function(req, res){
     res.render("dashboard",{user:req.user,profileDetail});
 });
 
+app.use('/account',isAuthenticated,require('./routes/account-route')) ;
+app.use('/createtest',isAuthenticated,require('./routes/createTest-route')) ;
+
 app.post("/register",require('./routes/auth-route').registerController);
 
 app.post("/login",require('./routes/auth-route').loginController);

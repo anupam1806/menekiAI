@@ -2335,7 +2335,7 @@ Teacher Dashboard
   width: 220px;
   height: 100vh;
 }
-.dashboard__sidebar ul{
+.dashboard__sidebar ul, a{
   /* margin-top: 100px; */
   list-style: none;
   color: white;
