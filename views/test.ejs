@@ -1,7 +1,83 @@
-<%- include('partials/header') %>
-<%- include('partials/SideBar') %>
+<%- include('partials/header',{testDetail}) %>
+<%- include('partials/SideBar',{testDetail}) %>
 
-<h1>Recent Test</h1>
+<div class="content">
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+    
+      <div class="col-md-8">
+      <form class="" method="POST" action="/user" enctype="multipart/form-data">
+        <div class="card card-user">
+          <div class="card-header">
+            <h5 class="card-title">Test</h5>
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="row">
+                <div class="col-md-5 pr-1">
+                  <div class="form-group">
+                    <label>Test Id</label>
+                    <input id="" name="id" type="text" class="form-control workExperience" placeholder="" value="" disabled>
+           
+                  </div>
+                </div>
+                <div class="col-md-4 pl-1">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Subject</label>
+                    <input type="text" name="subject" class="form-control" placeholder="" value="<%= testDetail?.subject %>">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                    <label>First Name</label>
+                    <input id="firstName" name="firstName" type="text" class="form-control" placeholder="" value="<%= testDetail?.firstName %>">
+                  </div>
+                </div>
+                <div class="col-md-6 pl-1">
+                  <div class="form-group">
+                    <label>Last Name</label>
+                    <input id="lastName" type="text" name="lastName" class="form-control" placeholder="" value="<%= testDetail?.lastName %>">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 pr-1">
+                  <div class="form-group">
+                    <label>Class</label>
+                    <input type="text" name="class" class="form-control" placeholder="" value="<%= testDetail?.class %>">
+                  </div>
+                </div>
+                <div class="col-md-4 px-1">
+                  <div class="form-group">
+                    <label>Submission Date</label>
+                    <input type="date" name="date" class="form-control" placeholder="" value="<%= testDetail?.submitDate %>">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <label>Total Marks</label>
+                  <input type="number" name="Marks" class="form-control" placeholder="" value="<%= testDetail?.totalMarks %>">
+                </div>
+              </div>
+              <div class="row">
+                <div class="update ml-auto mr-auto">
+                  <button type="submit" class="btn btn-primary btn-round">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
 
+  <script>
+
+  </script>
 
 <%- include('partials/footer') %>

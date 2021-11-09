@@ -5,6 +5,10 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const mongoose = require("mongoose");
 const passport = require("passport");
+const { v4: uuidv4 } = require('uuid');
+
+let myuuid = uuidv4();
+
 
 const app = express();
 
@@ -47,6 +51,7 @@ app.use(passport.session());
 const {isAuthenticated} = require('./config/ensureAuth');
 
 const User = require('./models/User');
+const { v4 } = require('uuid');
 
 app.get("/", function(req, res){
     res.render("landing");
