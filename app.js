@@ -74,6 +74,10 @@ app.post("/login",require('./routes/auth-route').loginController);
 
 app.get("/logout", require('./routes/auth-route').logoutController);
 
+app.get("/chatbot",function(req,res){
+  res.render("indexchat");
+});
+
 app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
