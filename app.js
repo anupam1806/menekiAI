@@ -74,7 +74,7 @@ app.post("/login",require('./routes/auth-route').loginController);
 
 app.get("/logout", require('./routes/auth-route').logoutController);
 
-app.get("/chatbot",function(req,res){
+app.use("/chatbot",isAuthenticated,function(req,res){
   res.render("indexchat");
 });
 

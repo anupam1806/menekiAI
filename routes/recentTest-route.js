@@ -15,7 +15,7 @@ router.post("/",async(req,res)=>{
       testDetail.subject = req.body.subject || testDetail.subject;
       testDetail.class = req.body.class || testDetail.class;
       testDetail.submitDate = req.body.submitDate || testDetail.submitDate;
-      testDetail.totalMarks = req.body.pincode || testDetail.pincode;
+      testDetail.totalMarks = req.body.totalMarks || testDetail.totalMarks;
       await testDetail.save();
       res.redirect('/recent') ;
   })
