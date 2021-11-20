@@ -5,6 +5,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const mongoose = require("mongoose");
 const passport = require("passport");
+const {google} = require("googleapis");
 const { v4: uuidv4 } = require('uuid');
 
 let myuuid = uuidv4();
@@ -43,6 +44,25 @@ app.use(session({
     maxAge:1000 * 60 * 60 * 24
   }
 }));
+
+const CLIENT_ID = '158206755376-df7tu7qre5cbkuvf3auk95f0p5stkukq.apps.googleusercontent.com';
+const CLIENT_SECRET = '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';
+const REDIRECTED_URI = 'https://developers.google.com/oauthplayground';
+const REFRESH_TOKEN = '1//04f-HF-KZUME0CgYIARAAGAQSNwF-L9IrGSvu0d5ffNPXvgfjWEZCSYQhpbEK-puaeRbHsOoo6aAWVFjDmCZ1QTrb8i0ttfHTAIw'
+
+const oauth2Client = new google.auth.OAuth2(
+  CLIENT_ID,
+  CLIENT_SECRET,
+  REDIRECTED_URI,
+  REFRESH_TOKEN
+);
+
+oauth2Client.setCredentials({refresh_token: REFRESH_TOKEN})
+
+const drive = google.drive({
+  version: 'v3',
+  auth: oauth2Client
+});
 
 app.use(passport.initialize());
 app.use(passport.session());
